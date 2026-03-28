@@ -1,0 +1,159 @@
+/* Tuggable light bulb — scoped from tuggable-light-bulb-gsap-draggable-morphsvg */
+.theme-bulb-host {
+  --on: 0;
+  --bulb-bg: hsl(calc(200 - (var(--on) * 160)), calc((20 + (var(--on) * 50)) * 1%), calc((20 + (var(--on) * 60)) * 1%));
+  --cord: hsl(0, 0%, calc((60 - (var(--on) * 50)) * 1%));
+  --stroke: hsl(0, 0%, calc((60 - (var(--on) * 50)) * 1%));
+  --shine: hsla(0, 0%, 100%, calc(0.75 - (var(--on) * 0.5)));
+  --cap: hsl(0, 0%, calc((40 + (var(--on) * 30)) * 1%));
+  --filament: hsl(45, calc(var(--on) * 80%), calc((25 + (var(--on) * 75)) * 1%));
+}
+
+.theme-bulb-wrap {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10050;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 4px;
+  max-width: min(100vw - 20px, 220px);
+  pointer-events: none;
+}
+
+.theme-bulb-wrap .theme-bulb-host {
+  pointer-events: auto;
+  width: 100px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.theme-bulb-hint {
+  margin: 0;
+  padding: 18px 0 0;
+  max-width: 108px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-align: right;
+  text-transform: uppercase;
+  pointer-events: none;
+  color: var(--theme-accent, #e46033);
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .theme-bulb-hint {
+    color: transparent;
+    background-image: linear-gradient(
+      125deg,
+      var(--theme-accent, #e46033) 0%,
+      #fb923c 42%,
+      #fbbf24 88%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.theme-bulb-hint__arrow {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--theme-accent, #e46033);
+  -webkit-text-fill-color: var(--theme-accent, #e46033);
+  background: none;
+}
+
+@media (max-width: 400px) {
+  .theme-bulb-hint {
+    max-width: 76px;
+    font-size: 9px;
+    padding-top: 22px;
+  }
+}
+
+.theme-bulb-host .toggle-scene {
+  overflow: visible !important;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.theme-bulb-host .toggle-scene__cord {
+  stroke: var(--cord);
+  cursor: grab;
+}
+
+.theme-bulb-host .toggle-scene__cord:active {
+  cursor: grabbing;
+}
+
+.theme-bulb-host .toggle-scene__cord:nth-of-type(1) {
+  display: none;
+}
+
+.theme-bulb-host .toggle-scene__cord:nth-of-type(2),
+.theme-bulb-host .toggle-scene__cord:nth-of-type(3),
+.theme-bulb-host .toggle-scene__cord:nth-of-type(4),
+.theme-bulb-host .toggle-scene__cord:nth-of-type(5) {
+  display: none;
+}
+
+.theme-bulb-host .toggle-scene__cord-end {
+  stroke: var(--cord);
+  fill: var(--cord);
+}
+
+.theme-bulb-host .toggle-scene__dummy-cord {
+  stroke-width: 6;
+  stroke: var(--cord);
+}
+
+.theme-bulb-host .bulb__filament {
+  stroke: var(--filament);
+}
+
+.theme-bulb-host .bulb__shine {
+  stroke: var(--shine);
+}
+
+.theme-bulb-host .bulb__flash {
+  stroke: #f5e0a3;
+  display: none;
+}
+
+.theme-bulb-host .bulb__bulb {
+  stroke: var(--stroke);
+  fill: hsla(calc(180 - (95 * var(--on))), 80%, 80%, calc(0.1 + (0.4 * var(--on))));
+}
+
+.theme-bulb-host .bulb__cap {
+  fill: var(--cap);
+}
+
+.theme-bulb-host .bulb__cap-shine {
+  fill: var(--shine);
+}
+
+.theme-bulb-host .bulb__cap-outline {
+  stroke: var(--stroke);
+}
+
+.theme-bulb-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

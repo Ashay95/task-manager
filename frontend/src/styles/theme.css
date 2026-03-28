@@ -1,0 +1,77 @@
+/* Light / dark tokens — toggled via html[data-theme] */
+html[data-theme='dark'] {
+  --theme-body-bg: #25252b;
+  --theme-text: #ffffff;
+  --theme-accent: #e46033;
+  --theme-muted: rgba(255, 255, 255, 0.62);
+  --theme-muted-strong: rgba(255, 255, 255, 0.85);
+  --theme-input-line: #ffffff;
+  --theme-surface: rgba(37, 37, 43, 0.85);
+  --theme-surface-2: rgba(30, 32, 36, 0.9);
+  --theme-gradient-start: #25252b;
+  --theme-curved2-bg: #25252b;
+  --theme-topbar-border: rgba(228, 96, 51, 0.25);
+  --theme-task-border: rgba(228, 96, 51, 0.45);
+  --theme-ghost-color: rgba(255, 255, 255, 0.92);
+  --theme-ghost-border: rgba(255, 255, 255, 0.28);
+  --theme-placeholder: rgba(255, 255, 255, 0.38);
+  --theme-dash-hover-bg: rgba(228, 96, 51, 0.12);
+  --theme-info-p: rgba(255, 255, 255, 0.9);
+  --theme-role-hint: rgba(255, 255, 255, 0.7);
+  --theme-regi-link: rgba(255, 255, 255, 0.85);
+  --theme-card-glow: rgba(228, 96, 51, 0.18);
+  --theme-task-shadow: rgba(0, 0, 0, 0.25);
+  --theme-input-hover-border: rgba(255, 255, 255, 0.22);
+  --theme-focus-ring: rgba(228, 96, 51, 0.35);
+  --theme-muted-heading: #ffffff;
+}
+
+html[data-theme='light'] {
+  --theme-body-bg: #eef2f7;
+  --theme-text: #0f172a;
+  --theme-accent: #c2410c;
+  --theme-muted: #64748b;
+  --theme-muted-strong: #334155;
+  --theme-input-line: #94a3b8;
+  --theme-surface: #ffffff;
+  --theme-surface-2: #f8fafc;
+  --theme-gradient-start: #f1f5f9;
+  --theme-curved2-bg: #e2e8f0;
+  --theme-topbar-border: rgba(194, 65, 12, 0.22);
+  --theme-task-border: rgba(194, 65, 12, 0.35);
+  --theme-ghost-color: #334155;
+  --theme-ghost-border: #cbd5e1;
+  --theme-placeholder: #94a3b8;
+  --theme-dash-hover-bg: rgba(194, 65, 12, 0.12);
+  --theme-info-p: #475569;
+  --theme-role-hint: #64748b;
+  --theme-regi-link: #475569;
+  --theme-card-glow: rgba(15, 23, 42, 0.08);
+  --theme-task-shadow: rgba(15, 23, 42, 0.08);
+  --theme-input-hover-border: #cbd5e1;
+  --theme-focus-ring: rgba(194, 65, 12, 0.35);
+  --theme-muted-heading: #0f172a;
+}
+
+/* Reserve space for fixed bulb + gradient hint (top-right) */
+.auth-forms-page {
+  padding-right: 13rem;
+}
+
+.dashboard-page .layout {
+  padding-right: 13rem;
+}
+
+@media (max-width: 640px) {
+  .auth-forms-page,
+  .dashboard-page .layout {
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-forms-page,
+  .dashboard-page .layout {
+    padding-right: 7.5rem;
+  }
+}

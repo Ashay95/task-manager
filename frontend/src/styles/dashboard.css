@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+/* Tasks dashboard — matches auth theme (#25252b + #e46033) */
+.dashboard-page {
+  min-height: 100vh;
+  background: var(--theme-body-bg);
+  color: var(--theme-text);
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.35s ease, color 0.25s ease;
+}
+
+.dashboard-page .layout {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.dashboard-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--theme-muted-heading);
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-page h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--theme-muted-heading);
+  margin: 0 0 1rem;
+}
+
+.dashboard-page h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--theme-muted-heading);
+  margin: 0 0 0.35rem;
+}
+
+.dashboard-page .muted {
+  color: var(--theme-muted);
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.dashboard-page .muted strong {
+  color: var(--theme-text);
+  font-weight: 600;
+}
+
+.dashboard-page .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--theme-topbar-border);
+}
+
+.dashboard-page .topbar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Panels — same language as auth container */
+.dashboard-page .card {
+  background: var(--theme-surface);
+  border: 2px solid var(--theme-accent);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 0 25px var(--theme-card-glow);
+}
+
+.dashboard-page .card.section {
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-page .banner {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+}
+
+.dashboard-page .banner.error {
+  background: rgba(120, 40, 40, 0.45);
+  border-color: color-mix(in srgb, var(--theme-accent) 65%, transparent);
+  color: #fecaca;
+}
+
+.dashboard-page .banner.success {
+  background: rgba(40, 90, 60, 0.4);
+  border-color: rgba(74, 222, 128, 0.45);
+  color: #bbf7d0;
+}
+
+.dashboard-page .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-page .form.inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.dashboard-page .form.stack {
+  width: 100%;
+}
+
+.dashboard-page input,
+.dashboard-page textarea {
+  font: inherit;
+  padding: 0.65rem 0.85rem;
+  background: var(--theme-surface-2);
+  border: 1px solid var(--theme-ghost-border);
+  border-radius: 8px;
+  color: var(--theme-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-page input::placeholder,
+.dashboard-page textarea::placeholder {
+  color: var(--theme-placeholder);
+}
+
+.dashboard-page input:hover,
+.dashboard-page textarea:hover {
+  border-color: var(--theme-input-hover-border);
+}
+
+.dashboard-page input:focus,
+.dashboard-page textarea:focus {
+  outline: none;
+  border-color: var(--theme-accent);
+  box-shadow: 0 0 0 1px var(--theme-focus-ring);
+}
+
+.dashboard-page textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+
+/* Primary — pill + orange border + hover fill like auth .btn */
+.dashboard-page .dash-primary {
+  position: relative;
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid var(--theme-accent);
+  border-radius: 999px;
+  padding: 0.65rem 1.35rem;
+  font-weight: 600;
+  color: var(--theme-text);
+  background: transparent;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.dashboard-page .dash-primary::before {
+  content: '';
+  position: absolute;
+  height: 300%;
+  width: 100%;
+  background: linear-gradient(
+    var(--theme-gradient-start),
+    var(--theme-accent),
+    var(--theme-gradient-start),
+    var(--theme-accent)
+  );
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: top 0.45s ease;
+}
+
+.dashboard-page .dash-primary:hover:not(:disabled)::before {
+  top: 0;
+}
+
+.dashboard-page .dash-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Ghost — outline, light text */
+.dashboard-page .dash-ghost {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.6rem 1.15rem;
+  font-weight: 600;
+  color: var(--theme-ghost-color);
+  background: transparent;
+  border: 1px solid var(--theme-ghost-border);
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.dashboard-page .dash-ghost:hover {
+  border-color: var(--theme-accent);
+  color: var(--theme-text);
+  background: var(--theme-dash-hover-bg);
+}
+
+.dashboard-page .dash-danger {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.6rem 1.15rem;
+  font-weight: 600;
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.35);
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.dashboard-page .dash-danger:hover {
+  background: rgba(153, 27, 27, 0.5);
+  border-color: rgba(248, 113, 113, 0.65);
+}
+
+.dashboard-page .section {
+  margin-bottom: 2rem;
+}
+
+.dashboard-page .section > h2 {
+  margin-bottom: 0.75rem;
+}
+
+.dashboard-page .task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-page .task-item {
+  background: var(--theme-surface);
+  border: 2px solid var(--theme-task-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 24px var(--theme-task-shadow);
+}
+
+.dashboard-page .task-item p {
+  margin: 0.35rem 0 0;
+  color: var(--theme-muted-strong);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.dashboard-page .task-item .small {
+  margin-top: 0.65rem;
+}
+
+.dashboard-page .row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dashboard-page .footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.dashboard-page .footer a {
+  color: var(--theme-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dashboard-page .footer a:hover {
+  text-decoration: underline;
+}
