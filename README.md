@@ -183,6 +183,4 @@ Send JWT as: `Authorization: Bearer <token>`.
 | `npm run dev`        | frontend | Vite dev       |
 | `npm run build`      | frontend | Static build   |
 
-## License
 
-MIT (or adjust for your project).
