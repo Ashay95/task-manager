@@ -1,3 +1,19 @@
+## 🚀 Task Manager Full Stack App
+
+A production-ready full-stack application with secure authentication, role-based access control, and scalable REST APIs.
+
+Built using:
+- Node.js + Express
+- MongoDB (Mongoose)
+- React (Vite)
+- JWT Authentication
+- Swagger Documentation
+
+## 🔗 Quick Links
+
+- Swagger Docs: http://localhost:5001/api-docs
+- Frontend: http://localhost:5173
+
 # Task App — Full-stack REST API + React UI
 
 Production-oriented monorepo: **Express + MongoDB (Mongoose) + JWT + bcrypt** backend, and a **React (Vite)** client for register, login, and task management.
